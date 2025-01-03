@@ -19,6 +19,9 @@ import {
   SiNodedotjs,
   SiTensorflow,
   SiPytorch,
+  SiPostman,
+  SiGit,
+  SiDocker,
 } from "react-icons/si";
 import { FaServer, FaJava } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
@@ -43,6 +46,9 @@ export default function Skills() {
     tools: [
       { name: "Vim", icon: <SiVim /> },
       { name: "VSCode", icon: <VscCode /> },
+      { name: "Postman", icon: <SiPostman /> },
+      { name: "Git", icon: <SiGit /> },
+      { name: "Docker", icon: <SiDocker /> },
     ],
     deployment: [
       { name: "VPS", icon: <FaServer /> },
