@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,20 +9,20 @@ export default function Navbar() {
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" }
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
     <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <motion.a 
+          <motion.a
             href="#"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-xl font-bold text-gray-900"
           >
-            MM
+            Mahathir
           </motion.a>
 
           {/* Desktop Menu */}
@@ -75,3 +75,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

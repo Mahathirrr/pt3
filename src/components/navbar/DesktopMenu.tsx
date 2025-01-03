@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { menuItems } from '../../constants/menuItems';
+import { motion } from "framer-motion";
+import { menuItems } from "../../constants/menuItems";
 
 interface DesktopMenuProps {
   scrolled: boolean;
@@ -16,7 +16,9 @@ export default function DesktopMenu({ scrolled }: DesktopMenuProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 }}
           className={`relative text-sm font-medium transition-colors ${
-            scrolled ? 'text-gray-600 hover:text-blue-600' : 'text-white/90 hover:text-white'
+            scrolled
+              ? "text-gray-600 hover:text-blue-600"
+              : "text-white/90 hover:text-white"
           } group`}
         >
           {item.label}
@@ -29,8 +31,8 @@ export default function DesktopMenu({ scrolled }: DesktopMenuProps) {
         animate={{ opacity: 1, scale: 1 }}
         className={`px-4 py-2 rounded-full transition-all ${
           scrolled
-            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:shadow-lg hover:scale-105'
-            : 'bg-white/10 text-white hover:bg-white/20'
+            ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:shadow-lg hover:scale-105"
+            : "bg-white/10 text-white hover:bg-white/20"
         }`}
       >
         Contact Me
@@ -38,3 +40,4 @@ export default function DesktopMenu({ scrolled }: DesktopMenuProps) {
     </div>
   );
 }
+

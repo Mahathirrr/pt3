@@ -43,7 +43,7 @@ export default function Header() {
               Muhammad Mahathir
             </h1>
             <h2 className="text-xl md:text-2xl text-blue-400 mb-6">
-              Computer Science Student
+              Undergraduate Student in Computer Science
             </h2>
 
             <div className="flex gap-6 justify-center md:justify-start">
@@ -84,4 +84,3 @@ export default function Header() {
     </motion.header>
   );
 }
-

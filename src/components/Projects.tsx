@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, FolderGit2 } from "lucide-react";
+import { Github, ExternalLink, FolderGit2, Award } from "lucide-react";
 
 const projects = [
   {
@@ -19,7 +19,7 @@ const projects = [
     image: "/assets/speed-typing.jpg",
   },
   {
-    title: "API Ecommerce with gRPC",
+    title: "API Ecommerce",
     description:
       "Backend ecommerce dengan implementasi RESTful API dan gRPC, dilengkapi dengan database migration dan dokumentasi lengkap.",
     tech: ["Golang", "gRPC", "SQLite"],
@@ -46,12 +46,12 @@ const projects = [
     image: "/assets/skillopa.jpg",
   },
   {
-    title: "Showcase Project",
+    title: "Augmented Reality for Chemistry Learning",
     description:
-      "Portfolio showcase dengan animasi modern dan performa optimal. Dibangun dengan Next.js dan deployed di Vercel.",
-    tech: ["MERN Stack"],
-    website: "https://showcase-project.xyz",
-    image: "/assets/showcase.jpg",
+      "Sebuah aplikasi mobile berbasis Augmented Reality (AR) yang dirancang untuk memudahkan pembelajaran kimia di sekolah menengah dasar. Aplikasi ini memanfaatkan teknologi Vuforia dan Unity untuk menciptakan pengalaman interaktif yang memungkinkan siswa memvisualisasikan molekul dan reaksi kimia secara 3D. Dengan antarmuka yang ramah pengguna, aplikasi ini bertujuan untuk meningkatkan pemahaman siswa terhadap konsep kimia yang kompleks melalui pendekatan visual dan interaktif.",
+    tech: ["Unity", "Vuforia", "C#", "Mobile Development"],
+    image: "/assets/ar-chemistry.jpg",
+    isFeatured: true, // Tambahkan flag untuk menandai proyek ini sebagai proyek unggulan
   },
 ];
 
@@ -91,7 +91,9 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-primary-500/50 transition-all duration-300"
+                className={`group relative bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-primary-500/50 transition-all duration-300 ${
+                  project.isFeatured ? "lg:col-span-3" : ""
+                }`}
               >
                 {/* Project Image */}
                 <div className="relative aspect-video overflow-hidden">
@@ -149,9 +151,19 @@ export default function Projects() {
 
                 {/* Project Info */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-primary-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    {project.isFeatured && (
+                      <div className="flex items-center gap-2 bg-primary-500/10 px-3 py-1 rounded-full">
+                        <Award size={18} className="text-primary-400" />
+                        <span className="text-sm text-primary-400">
+                          Top 20 Inovasi Terbaik LIDM 2024
+                        </span>
+                      </div>
+                    )}
+                  </div>
                   <p className="text-gray-300 text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
